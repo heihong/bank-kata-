@@ -25,11 +25,10 @@ class Account{
     getTransactions(){
         return this.transactions;
     }
-
     getAmountTransaction(){
         let result = this.amount;
         for(let i = 0; i< this.transactions.length; i++){
-            result = result + this.transactions[i].getTransaction().getAction();
+            result +=this.transactions[i].getTransaction().getAction();
             this.amountTransaction.push(result);
         }
 
