@@ -9,13 +9,16 @@ class Account{
         this.amountTransaction = [];
     }
 
-    getAmount(){
-        return this.amount;
-
-    }
-
     getNameClient() {
         return this.nameClient;
+    }
+
+    getAmount(){
+        if(this.getAmountTransaction().length > 0){
+            this.amount = this.getAmountTransaction()[this.getAmountTransaction().length-1];
+        }
+        return  this.amount;
+
     }
 
     setTransactions(transaction){
@@ -25,6 +28,7 @@ class Account{
     getTransactions(){
         return this.transactions;
     }
+
     getAmountTransaction(){
         let result = this.amount;
         for(let i = 0; i< this.transactions.length; i++){
