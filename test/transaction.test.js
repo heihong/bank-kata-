@@ -14,9 +14,7 @@ describe('Test class Transaction', function () {
         account = new Account("heihong");
         client = new Client("heihong", account);
         deposit = new Deposit(200, "14/09/2019");
-        deposit1 =  new Deposit(200, "14/09/2019");
         transaction  = new Transaction(deposit, account);
-        transaction1  = new Transaction(deposit1, account);
 
 
     });
@@ -29,15 +27,7 @@ describe('Test class Transaction', function () {
         assert.equal(account, transaction.getAccount());
     });
 
-    it('should test printDate return 14/9/2019', function () {
-        let result = '14/9/2019';
-        assert.equal(result, transaction.printDate(transaction.getTransaction().getDateOperation()));
-    });
 
-    it('should test getStatement and return result', function () {
-        let result = `Deposit 200 the 14/9/2019`;
-        assert.equal(result, transaction.getStatement());
-    });
 
 
 

@@ -1,6 +1,6 @@
 'use strict';
 
-class Deposit{
+class Withdrawal{
 
     constructor(amount, date) {
         this.amount = amount || "";
@@ -17,8 +17,8 @@ class Deposit{
     }
 
     getAction(){
-        return this.amount;
+        return -this.amount;
     }
 }
 
-module.exports = Deposit;
+module.exports = Withdrawal;

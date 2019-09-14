@@ -14,13 +14,7 @@ class Transaction{
         return this.account;
     }
 
-    printDate(transaction){
-        return `${transaction.getDate()}/${transaction.getMonth()}/${transaction.getFullYear()}`;
-    }
 
-    getStatement() {
-        return `Deposit ${this.transaction.getAmount()} the ${this.printDate(this.transaction.getDateOperation())}`;
-    }
 
 
 
