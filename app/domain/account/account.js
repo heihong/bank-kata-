@@ -5,6 +5,7 @@ class Account{
     constructor(nameClient, amount) {
         this.nameClient = nameClient || "";
         this.amount  = amount || 0;
+        this.transactions = [];
     }
 
     getAmount(){
@@ -15,6 +16,8 @@ class Account{
     getNameClient() {
         return this.nameClient;
     }
+
+
 
 }
 

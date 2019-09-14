@@ -29,6 +29,16 @@ describe('Test class Transaction', function () {
         assert.equal(account, transaction.getAccount());
     });
 
+    it('should test printDate return 14/9/2019', function () {
+        let result = '14/9/2019';
+        assert.equal(result, transaction.printDate(transaction.getTransaction().getDateOperation()));
+    });
+
+    it('should test getStatement and return result', function () {
+        let result = `Deposit 200 the 14/9/2019`;
+        assert.equal(result, transaction.getStatement());
+    });
+
 
 
 
