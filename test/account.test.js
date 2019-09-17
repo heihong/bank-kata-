@@ -1,8 +1,6 @@
 
 let assert = require('assert');
 const Account = require('../app/domain/account/account');
-const Client = require('../app/domain/client/client');
-const Operation = require('../app/domain/operation/operation');
 
 
 describe('Test class Account', function () {
@@ -10,9 +8,7 @@ describe('Test class Account', function () {
     let account, client, account1;
 
     beforeEach(()=> {
-        account = new Account("heihong");
-        client = new Client("heihong", account);
-        account1 = new Account();
+        account = new Account();
     });
 
     it('should make 3 deposit ', function () {

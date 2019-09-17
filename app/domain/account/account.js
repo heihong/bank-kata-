@@ -6,9 +6,7 @@ const WITHDRAWAL = "withdrawal";
 
 class Account{
 
-    constructor(nameClient) {
-        this.nameClient = nameClient || "";
-        this.amount = 0;
+    constructor() {
         this.history = [];
     }
 
