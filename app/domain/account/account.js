@@ -2,44 +2,19 @@
 
 class Account{
 
-    constructor(nameClient, amount) {
+    constructor(nameClient) {
         this.nameClient = nameClient || "";
-        this.amount  = amount || 0;
-        this.transactions = [];
-        this.amountTransaction = [];
+        this._amount  = amount || 0;
     }
 
     getNameClient() {
         return this.nameClient;
     }
 
-    getAmount(){
-        if(this.getAmountTransaction().length > 0){
-            this.amount = this.getAmountTransaction()[this.getAmountTransaction().length-1];
-        }
+    getAmount() {
         return  this.amount;
 
     }
-
-    setTransactions(transaction){
-        this.transactions.push(transaction)
-    }
-
-    getTransactions(){
-        return this.transactions;
-    }
-
-    getAmountTransaction(){
-        let result = this.amount;
-        for(let i = 0; i< this.transactions.length; i++){
-            result +=this.transactions[i].getTransaction().getAction();
-            this.amountTransaction.push(result);
-        }
-
-        return this.amountTransaction;
-    }
-
-
 }
 
 module.exports = Account;
