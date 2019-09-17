@@ -15,21 +15,22 @@ describe('Test class Account', function () {
         account1 = new Account();
     });
 
-    it('should test getNameClient and return heihong', function () {
-        assert.equal("heihong", account.getNameClient());
+    it('should make 3 deposit ', function () {
+        let account = new Account("jean");
+        account.applyDeposit(100);
+        account.applyWithdrawal(50);
+        account.applyDeposit(20);
+
+        assert.equal(3, account.history.length);
     });
 
-    it('should test getAmount and return 0', function () {
-        assert.equal(0, account.getAmount());
-    });
+    it('should make 3 deposit return 70', function () {
+        let account = new Account("jean");
+        account.applyDeposit(100);
+        account.applyWithdrawal(50);
+        account.applyDeposit(20);
 
-    it('should test setAmount and return 200', function () {
-        account.setAmount(200);
-        assert.equal(200, account.getAmount());
-    });
-
-    it('should test getNameClient and return ', function () {
-        assert.equal("", account1.getNameClient())
+        assert.equal(70, account.balance);
     });
 
 
