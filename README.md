@@ -27,4 +27,4 @@ Think of your personal bank account experience When in doubt, go for the simples
 * Run `npm test` to execute the unit tests`.
 * Run `npm run coverage` to execute the unit tests and see the coverage`.
 
-![alt text](https://yuml.me/c42b1766.jpg)
+![alt text](http://yuml.me/2e9fd116.jpg)
