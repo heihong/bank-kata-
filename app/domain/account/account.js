@@ -1,8 +1,7 @@
-'use strict';
+
+const TransactionFactory = require('../transaction/transactionFactory')
 
 
-const DEPOSIT = "deposit";
-const WITHDRAWAL = "withdrawal";
 
 class Account{
 
@@ -10,43 +9,26 @@ class Account{
         this.history = [];
     }
 
-    _applyTransaction(type, amount){
-        if(amount<0){
-            throw new Error('AMOUNT_SHOULD_BE_POSITIVE');
-        }
-        const transaction = {
-            type,
-            amount,
-            date : Date.now()
-        };
-        this.history.push(transaction);
-
-    }
-
     applyDeposit(amount){
-        this._applyTransaction(DEPOSIT, amount);
+        let transaction = TransactionFactory.getInstanceDeposit(amount);
+        this.history.push(transaction);
     }
 
     applyWithdrawal(amount){
-        this._applyTransaction(WITHDRAWAL, amount);
+        let transaction = TransactionFactory.getInstanceWithdrawal(amount);
+        this.history.push(transaction);
     }
 
     get balance(){
-        return this.history.reduce((balance, transaction)=>{
-            const { type, amount } = transaction;
-            if (type === DEPOSIT){
-                return balance + amount;
+        return this.history.reduce((balance, transaction) => {
+            if (transaction.isDeposit){
+                return balance + transaction.amount;
             }
-            if(type === WITHDRAWAL){
-                return balance - amount;
+            if(transaction.isWithdrawal){
+                return balance - transaction.amount;
             }
-            throw new Error('BAD_TRANSACTION_TYPE');
         }, 0)
     }
-
-
-
-
 }
 
 module.exports = Account;

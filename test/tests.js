@@ -11,7 +11,7 @@ describe('Test class Account', function () {
         account = new Account();
     });
 
-    it('should make 3 deposit ', function () {
+    it('should make 3 deposit', function () {
         let account = new Account("jean");
         account.applyDeposit(100);
         account.applyWithdrawal(50);
@@ -28,6 +28,23 @@ describe('Test class Account', function () {
 
         assert.equal(70, account.balance);
     });
+
+    it('should throw exception and negative amount', function () {
+        let account = new Account("jean");
+
+        assert.throws(function () {
+            account.applyDeposit(-1)
+        }, Error);
+    });
+
+    it('should throw exception and negative amount', function () {
+        let account = new Account("jean");
+
+        assert.throws(function () {
+            account.applyWithdrawal(-1)
+        }, Error);
+    });
+
 
 
 
