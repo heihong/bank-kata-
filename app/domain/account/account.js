@@ -1,7 +1,4 @@
-
 const TransactionFactory = require('../transaction/transactionFactory')
-
-
 
 class Account{
 
@@ -20,14 +17,7 @@ class Account{
     }
 
     get balance(){
-        return this.history.reduce((balance, transaction) => {
-            if (transaction.isDeposit){
-                return balance + transaction.amount;
-            }
-            if(transaction.isWithdrawal){
-                return balance - transaction.amount;
-            }
-        }, 0)
+        return this.history.reduce((balance, transaction) => transaction.isDeposit ?  balance + transaction.amount : balance - transaction.amount, 0);
     }
 }
 

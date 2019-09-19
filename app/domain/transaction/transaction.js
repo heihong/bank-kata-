@@ -1,4 +1,3 @@
-
 const TransactionTypes = require("./transactionType");
 
 class Transaction{
@@ -10,10 +9,6 @@ class Transaction{
 
     get isDeposit() {
         return this.type === TransactionTypes.DEPOSIT
-    }
-
-    get isWithdrawal() {
-        return this.type === TransactionTypes.WITHDRAWAL
     }
 
 }
