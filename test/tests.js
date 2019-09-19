@@ -5,7 +5,7 @@ const Account = require('../app/domain/account/account');
 
 describe('Test class Account', function () {
 
-    let account, client, account1;
+    let account;
 
     beforeEach(()=> {
         account = new Account();
