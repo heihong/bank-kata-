@@ -10,12 +10,12 @@ class Account{
     }
 
     applyDeposit(amount){
-        let transaction = TransactionFactory.getInstanceDeposit(amount);
+        let transaction = TransactionFactory.forDeposit(amount);
         this.history.push(transaction);
     }
 
     applyWithdrawal(amount){
-        let transaction = TransactionFactory.getInstanceWithdrawal(amount);
+        let transaction = TransactionFactory.forWithdrawal(amount);
         this.history.push(transaction);
     }
 

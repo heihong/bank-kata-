@@ -4,14 +4,14 @@ const TransactionTypes = require("./transactionType");
 
 const TransactionFactory = {
 
-     getInstanceDeposit(amount){
+     forDeposit(amount){
         if(amount<0){
             throw new Error('AMOUNT_SHOULD_BE_POSITIVE');
         }
         return new Transaction(TransactionTypes.DEPOSIT, amount , Date.now());
     },
 
-     getInstanceWithdrawal(amount){
+     forWithdrawal(amount){
         if(amount<0){
             throw new Error('AMOUNT_SHOULD_BE_POSITIVE');
         }
